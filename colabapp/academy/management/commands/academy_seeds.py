@@ -27,13 +27,13 @@ class Command(BaseCommand):
 
             ss = Subject()
             ss.course = Course.objects.get(name = "Matematica Avanzada")
-            ss.teacher = Teacher.objects.get(first_name = "Pepito")
+            ss.teacher = Teacher.objects.get(first_name = "John")
             ss.start_date = "2023-08-10"
             ss.save()
 
             ss = Subject()
             ss.course = Course.objects.get(name = "Literatura")
-            ss.teacher = Teacher.objects.get(first_name = "Carlito")
+            ss.teacher = Teacher.objects.get(first_name = "Jane")
             ss.start_date = "2023-10-15"
             ss.save()
         elif mode == "clear":
@@ -42,15 +42,15 @@ class Command(BaseCommand):
     def seeds_student(self, mode):
         if mode == "load" and Student.objects.all().count() <= 0:
             s = Student()
-            s.username = "juancito"
-            s.first_name = "Juancito"
+            s.username = "juance"
+            s.first_name = "Juan"
             s.last_name = "Espinoza"
             s.email = "juan@gmail.com"
             s.set_password("123456")
             s.save()
 
             s = Student()
-            s.username = "ramiro"
+            s.username = "ram"
             s.first_name = "Ramiro"
             s.last_name = "Espinoza"
             s.email = "ramiro@gmail.com"
@@ -79,17 +79,17 @@ class Command(BaseCommand):
         if mode == "load" and Teacher.objects.all().count() <= 0:
             # Verificamos que solo see creen docentes una sola vez
             t = Teacher()
-            t.username = "pepito"
-            t.first_name = "Pepito"
-            t.last_name = "Alcachofa"
+            t.username = "johndo"
+            t.first_name = "John"
+            t.last_name = "Doe"
             t.bio = "Este es un bio del docente"
             t.set_password('123456')
             t.save()
 
             t = Teacher()
-            t.username = "carlito"
-            t.first_name = "Carlito"
-            t.last_name = "Alcachofa"
+            t.username = "janedo"
+            t.first_name = "Jane"
+            t.last_name = "Dohe"
             t.bio = "Este es un bio del docente"
             t.set_password('123456')
             t.save()
