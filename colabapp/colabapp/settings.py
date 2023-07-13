@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'academy.apps.AcademyConfig',
-    'security.apps.SecurityConfig',
+    'security.apps.SecurityConfig'
 ]
 
 MIDDLEWARE = [
