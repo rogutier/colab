@@ -46,7 +46,9 @@ class Command(BaseCommand):
             s.first_name = "Juan"
             s.last_name = "Espinoza"
             s.email = "juan@gmail.com"
-            s.set_password("123456")
+            s.is_staff = True
+            s.is_active = True
+            s.set_password('123456')
             s.save()
 
             s = Student()
@@ -54,7 +56,9 @@ class Command(BaseCommand):
             s.first_name = "Ramiro"
             s.last_name = "Espinoza"
             s.email = "ramiro@gmail.com"
-            s.set_password("123456")
+            s.is_staff = True
+            s.is_active = True
+            s.set_password('123456')
             s.save()
         elif mode == "clear":
             Student.objects.all().delete()
@@ -82,6 +86,8 @@ class Command(BaseCommand):
             t.username = "johndo"
             t.first_name = "John"
             t.last_name = "Doe"
+            t.is_staff = True
+            t.is_active = True
             t.bio = "Este es un bio del docente"
             t.set_password('123456')
             t.save()
@@ -90,6 +96,8 @@ class Command(BaseCommand):
             t.username = "janedo"
             t.first_name = "Jane"
             t.last_name = "Dohe"
+            t.is_staff = True
+            t.is_active = True
             t.bio = "Este es un bio del docente"
             t.set_password('123456')
             t.save()

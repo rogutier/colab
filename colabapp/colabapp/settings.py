@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^t_vlb1mss&e%guk&&*29t74h$r4q4milrphzsil72+=lwt+88
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ['https://8000-rogutier-colab-hwc99xc3nzl.ws-us101.gitpod.io']
 
 # Application definition
 
