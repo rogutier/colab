@@ -63,7 +63,7 @@ class Command(BaseCommand):
         if mode == "load" and Course.objects.all().count() <= 0:
             c = Course()
             c.name = "Matematica Avanzada"
-            c.description = "Una matematica pero avanzada"
+            c.description = "Matemática descriptiva de segundo nivel."
             c.save()
 
             c = Course()
