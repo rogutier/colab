@@ -8,11 +8,35 @@
                 <h2 class="text-white mt-0">{{ course.name }}</h2>
                 <hr class="divider divider-light" />
                 <p class="text-white-75 mb-4">{{ course.description }}</p>
-                <a class="btn btn-light btn-xl" href="/academy/course/{{ course.id }}/subscribe">Matriculate</a>
+                
+                {% if subscribed %}
+                <p class="text-white-75 mb-4">Relator: {{ subs.teacher.first_name }} {{ subs.teacher.last_name }}</p>
+                <a class="btn btn-secondary btn-xl" 
+                    href="#">Ir a clase</a>
+            {% else %}
+                <a class="btn btn-light btn-xl" 
+                    href="/academy/course/{{ course.id }}/subscribe">Matriculate</a>                    
+            {% endif %}
+
+            {% for message in messages %}
+                        {% if message.tags == "success" %}
+                            <div class="alert alert-success alert-dismissible fade show" 
+                                role="alert">{{ message }}
+                                <button type="button" 
+                                    class="btn-close" 
+                                    data-bs-dismiss="alert" 
+                                    aria-label="Close"></button>
+                            </div>
+                        {% endif %}
+
+                        {% if message.tags == "error" %}
+                            <div class="alert alert-danger">{{ message }}</div>
+                        {% endif %}                        
+                    {% endfor %}
             </div>
         </div>
     </div>
-</section>    
+</section>
 <!-- Services-->
 <section class="page-section" id="services">
     <div class="container px-4 px-lg-5">
